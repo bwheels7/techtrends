@@ -1,8 +1,8 @@
 FROM python:3.10
 LABEL maintainer="Brian Wheeless"
 
-COPY . /app
-WORKDIR /app
+COPY . /techtrends
+WORKDIR /techtrends
 
 ADD . .
 
