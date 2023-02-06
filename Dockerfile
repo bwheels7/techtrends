@@ -2,7 +2,7 @@ FROM python:3.10
 LABEL maintainer="Brian Wheeless"
 
 COPY . /app
-WORKDIR /techtrends
+WORKDIR /app
 
 ADD . .
 
