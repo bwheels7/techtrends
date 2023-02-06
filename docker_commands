@@ -1,0 +1,36 @@
+cd C:/Users/'Brian W'/nd064_course_1/project/techtrends
+
+--docker commands
+
+docker build -t techtrends .
+
+docker run -d -p 7111:3111 techtrends
+
+docker tag techtrends wheelhaus/techtrends:v1.0.0
+
+docker logs 336328882ef5
+* Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:172.17.0.1 - - [05/Feb/2023 15:43:00] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [05/Feb/2023 15:43:00] "GET /static/css/main.css HTTP/1.1" 200 -
+INFO:app:Article "2020 CNCF Annual Report" retrieved!
+INFO:werkzeug:172.17.0.1 - - [05/Feb/2023 15:44:35] "GET /1 HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [05/Feb/2023 15:44:35] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [05/Feb/2023 15:44:37] "GET /create HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [05/Feb/2023 15:44:37] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:A new article "Happy Sunday" has been created!
+INFO:werkzeug:172.17.0.1 - - [05/Feb/2023 15:44:51] "POST /create HTTP/1.1" 302 -
+INFO:werkzeug:172.17.0.1 - - [05/Feb/2023 15:44:51] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [05/Feb/2023 15:44:51] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:Article "Happy Sunday" retrieved!
+INFO:werkzeug:172.17.0.1 - - [05/Feb/2023 15:44:56] "GET /7 HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [05/Feb/2023 15:44:56] "GET /static/css/main.css HTTP/1.1" 304 -
+ERROR:app:Article does not exist "404"
+INFO:werkzeug:172.17.0.1 - - [05/Feb/2023 15:45:04] "GET /22 HTTP/1.1" 404 -
+INFO:werkzeug:172.17.0.1 - - [05/Feb/2023 15:45:04] "GET /static/css/main.css HTTP/1.1" 304 -
