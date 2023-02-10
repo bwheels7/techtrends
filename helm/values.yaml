@@ -1,5 +1,5 @@
 namespace:
-  name: sandox
+  name: sandbox
  
 service:
   port: 4111
