@@ -23,8 +23,14 @@ resources:
     memory: 128Mi
 containerPort: 3111
 livenessProbe:
+  limits:
+    cpu: 500m
+    memory: 128Mi
   path: /healthz
   port: 3111
+  requests:
+    cpu: 300m
+    memory: 90Mi
 readinessProbe:
   path: /healthz
   port: 3111
