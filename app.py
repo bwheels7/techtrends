@@ -1,4 +1,4 @@
-import sqlite3
+import sqlite3,sys
 
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
 from werkzeug.exceptions import abort
@@ -107,6 +107,17 @@ def logmessage(msg):
 # start the application on port 3111
 if __name__ == "__main__":
    #logging.basicConfig(filename='apptt.log',level=logging.DEBUG)
-   logging.basicConfig(level=logging.DEBUG)
+  
+   
+
+   # set logger to handle STDOUT and STDERR 
+   stdout_handler = logging.StreamHandler(sys.stdout)
+   stderr_handler = logging.StreamHandler(sys.stderr)
+   handlers = [stderr_handler, stdout_handler]
+   
+   #logging.basicConfig(level=logging.DEBUG)
+   format_output = "[%(levelname)s] %(asctime)s: %(message)s"
+   logging.basicConfig(format=format_output, level=logging.DEBUG, handlers=handlers)
+   
    app.run(host='0.0.0.0', port='3111')
 
