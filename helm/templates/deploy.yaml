@@ -39,12 +39,12 @@ spec:
             port: {{ .Values.readinessProbe.port }}
         livenessProbe:
           httpGet:
-            limits:
-              cpu: {{ .Values.livenessProbe.limits.cpu }}
-              memory: {{ .Values.livenessProbe.limits.memory }}
+  #          limits:
+  #            cpu: {{ .Values.livenessProbe.limits.cpu }}
+  #            memory: {{ .Values.livenessProbe.limits.memory }}
             path: {{ .Values.livenessProbe.path }}
             port: {{ .Values.livenessProbe.port }}
-            requests:
-              cpu: {{ .Values.livenessProbe.requests.cpu }}
-              memory: {{ .Values.livenessProbe.requests.memory }}
+  #          requests:
+  #            cpu: {{ .Values.livenessProbe.requests.cpu }}
+  #            memory: {{ .Values.livenessProbe.requests.memory }}
 {{ toYaml .Values.resources | indent 12 }}
