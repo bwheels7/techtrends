@@ -39,8 +39,8 @@ spec:
             port: {{ .Values.readinessProbe.port }}
         livenessProbe:
           httpGet:
-  #          limits:
-  #            cpu: {{ .Values.livenessProbe.limits.cpu }}
+            limits:
+              cpu: {{ .Values.livenessProbe.limits.cpu }}
   #            memory: {{ .Values.livenessProbe.limits.memory }}
             path: {{ .Values.livenessProbe.path }}
             port: {{ .Values.livenessProbe.port }}
