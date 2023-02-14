@@ -45,11 +45,6 @@ spec:
             path: {{ .Values.readinessProbe.path }}
             port: 3111
           livenessProbe:
-            initialDelaySeconds: 1
-            periodSeconds: 2
-            timeoutSeconds: 1
-            successThreshold: 1
-            failureThreshold: 1
             httpGet:
               host:
               scheme: HTTP
