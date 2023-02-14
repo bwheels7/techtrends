@@ -34,17 +34,25 @@ spec:
         ports:
           - containerPort: {{ .Values.containerPort }}
         readinessProbe:
+          initialDelaySeconds: 1
+          periodSeconds: 2
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 1
           httpGet:
+            host:
+            scheme: HTTP
             path: {{ .Values.readinessProbe.path }}
-            port: {{ .Values.readinessProbe.port }}
-        livenessProbe:
-          httpGet:
-            limits:
-              cpu: {{ .Values.livenessProbe.limits.cpu }}
-  #            memory: {{ .Values.livenessProbe.limits.memory }}
-            path: {{ .Values.livenessProbe.path }}
-            port: {{ .Values.livenessProbe.port }}
-  #          requests:
-  #            cpu: {{ .Values.livenessProbe.requests.cpu }}
-  #            memory: {{ .Values.livenessProbe.requests.memory }}
+            port: 3111
+          livenessProbe:
+            initialDelaySeconds: 1
+            periodSeconds: 2
+            timeoutSeconds: 1
+            successThreshold: 1
+            failureThreshold: 1
+            httpGet:
+              host:
+              scheme: HTTP
+              path: {{ .Values.livenessProbe.path }}
+              port: 3111
 {{ toYaml .Values.resources | indent 12 }}
